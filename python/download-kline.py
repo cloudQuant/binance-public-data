@@ -162,7 +162,8 @@ if __name__ == "__main__":
     else:
         symbols = args.symbols
         num_symbols = len(symbols)
-
+    import random
+    random.shuffle(symbols)
     if args.dates:
         dates = args.dates
     else:
