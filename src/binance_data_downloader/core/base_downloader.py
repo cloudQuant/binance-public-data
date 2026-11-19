@@ -11,7 +11,7 @@ import os
 from abc import ABC, abstractmethod
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from ..core.checksum_verifier import ChecksumVerifier
 from ..core.data_type_config import DataType, get_data_type_spec
