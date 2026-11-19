@@ -5,6 +5,7 @@ import shutil
 import ssl
 import sys
 import urllib.request
+from urllib.parse import quote
 from argparse import ArgumentParser, RawTextHelpFormatter, ArgumentTypeError
 from pathlib import Path
 
@@ -23,8 +24,9 @@ def get_destination_dir(file_url, folder=None):
 
 
 def get_download_url(file_url):
-    return "{}{}".format(BASE_URL, file_url)
-
+    # Ensure the URL is properly encoded to handle Chinese characters
+    encoded_url = quote(file_url, safe='/')
+    return "{}{}".format(BASE_URL, encoded_url)
 
 def get_all_symbols(type):
     if type == 'um':
